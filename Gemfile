@@ -6,7 +6,7 @@ source "https://rubygems.org"
 gem "middleman", "~> 4.1"
 gem "middleman-blog"
 gem "middleman-livereload"
-gem "middleman-deploy", "~> 1.0"
+gem "middleman-deploy", "~> 2.0.0.pre.alpha"
 
 # Template languages
 gem "slim"
