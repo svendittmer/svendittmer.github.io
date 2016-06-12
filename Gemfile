@@ -12,6 +12,8 @@ gem "middleman-deploy", "~> 2.0.0.pre.alpha"
 gem "slim"
 gem "redcarpet", "~> 3.3", ">= 3.3.3"
 
-
 # For feed.xml.builder
 gem "builder", "~> 3.0"
+
+# required for showing a summary for each blog entry
+gem "nokogiri"

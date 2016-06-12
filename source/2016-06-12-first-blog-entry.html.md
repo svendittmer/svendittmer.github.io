@@ -1,10 +1,11 @@
 ---
-title: First Entry
+title: First Blog Entry
 date: 2016-06-12
-tags: first
+tags:
+  - middleman
+  - blog
 ---
 
-# First Blog entry
 I've been playing with the thought of building my own blog for a few months, and now is the time I turn this thought into reality. Choosing a platform wasn't easy, and I considered using Wordpress, Ghost, Jekyll or Medium until I decided to dive into Middleman instead. I might still copy some articles to Medium though, since I am already registered at Medium and I spend at least a couple minutes every day to check out what's going on there.
 
 ### Why Middleman?
