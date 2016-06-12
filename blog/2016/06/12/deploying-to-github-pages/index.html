@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-    <title>Sven Dittmer</title>
+    <title>Sven Dittmer - Deploying Middleman to Github Pages</title>
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
   <body>
@@ -14,19 +14,24 @@
       <div class="row">
 
         <div id="main" role="main" class="col-xs-12 col-sm-9">
-          <p>
-  Dear visitor, I know this website looks a little bit bare-bone right now, but I promise I'll add some CSS later.
-  Just wanted to ship this asap!
-</p>
-
-  <h2><a href="/blog/2016/06/12/deploying-to-github-pages/">Deploying Middleman to Github Pages</a> <span>Jun 12</span></h2>
-  <p>I've had quite some trouble deploying my site to github pages.
+          <h1>Deploying Middleman to Github Pages</h1>
+          <p>I've had quite some trouble deploying my site to github pages.
 The reason is that the deploy needs to be configured differently,
 depending on whether you create a website for a project or for your account.
-The default configuration won't work if you...</p>
-  <h2><a href="/blog/2016/06/12/first-blog-entry/">First Blog Entry</a> <span>Jun 12</span></h2>
-  <p>I've been playing with the thought of building my own blog for a few months, and now is the time I turn this thought into reality. Choosing a platform wasn't easy, and I considered using Wordpress, Ghost, Jekyll or Medium until I decided to dive into...</p>
+The default configuration won't work if you're making a website for an
+account. This configuration worked for me:</p>
 
+<pre><code>activate :deploy do |deploy|
+  deploy.deploy_method = :git
+  deploy.branch = 'master'
+end
+</code></pre>
+
+<p>Also, note that the current version of middleman-deploy (1.0.0) doesn't seem to
+do the trick, I had to use the alpha Version: <code>gem "middleman-deploy", "~&gt; 2.0.0.pre.alpha"</code></p>
+
+<p>After figuring out how it works, I must say that I'm quite happy with the result:
+The deploy works like a charm and I've got a free website now, ssl already included! 😄</p>
 
         </div>
 
