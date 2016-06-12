@@ -10,16 +10,15 @@
     <name>Blog Author</name>
   </author>
   <entry>
-    <title>First Entry</title>
+    <title>First Blog Entry</title>
     <link rel="alternate" href="http://blog.url.com/2016/06/12/first-blog-entry/"/>
     <id>http://blog.url.com/2016/06/12/first-blog-entry/</id>
     <published>2016-06-12T02:00:00+02:00</published>
-    <updated>2016-06-12T21:41:23+02:00</updated>
+    <updated>2016-06-12T23:03:36+02:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;h1 id="first-blog-entry"&gt;First Blog entry&lt;/h1&gt;
-&lt;p&gt;I've been playing with the thought of building my own blog for a few months, and now is the time I turn this thought into reality. Choosing a platform wasn't easy, and I considered using Wordpress, Ghost, Jekyll or Medium until I decided to dive into Middleman instead. I might still copy some articles to Medium though, since I am already registered at Medium and I spend at least a couple minutes every day to check out what's going on there.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I've been playing with the thought of building my own blog for a few months, and now is the time I turn this thought into reality. Choosing a platform wasn't easy, and I considered using Wordpress, Ghost, Jekyll or Medium until I decided to dive into Middleman instead. I might still copy some articles to Medium though, since I am already registered at Medium and I spend at least a couple minutes every day to check out what's going on there.&lt;/p&gt;
 
 &lt;h3 id="why-middleman"&gt;Why Middleman?&lt;/h3&gt;
 &lt;p&gt;Well, first of all I like the idea of creating static websites. Since I'm dealing with database-backed web-apps at work every day, it seemed to me that diving into this kind of technology might broaden my mind and enable me to look at building websites in a new, different way. Secondly, Middleman is based on Ruby, so I can bring in my experience as Ruby on Rails Developer and use my favorite Template Language Slim.&lt;/p&gt;
