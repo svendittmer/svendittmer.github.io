@@ -12,12 +12,24 @@
   <body>
     <div class="container">
       <div class="row">
+        <header class="page-header">
+          <p class="text-center">
+            <% link_to '/' do %>
+              <%= image_tag 'http://www.gravatar.com/avatar/0fc4e73ea3152786d732d50befc68a8d?s=200',
+                             width: "150", height: "150", class: "img-circle",
+                             alt: "Sven Dittmer"
+              %>
+            <% end %>
+          </p>
+        </header>
+      </div>
+      <div class="row">
 
-        <div id="main" role="main" class="col-xs-12 col-sm-9">
+        <div id="main" role="main" class="col-xs-12 col-md-9">
           <%= yield %>
         </div>
 
-        <aside class="col-xs-12 col-sm-3">
+        <aside class="col-xs-12 col-md-3">
           <h2>Recent Articles</h2>
           <ol>
             <% blog.articles[0...10].each do |article| %>
