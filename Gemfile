@@ -12,6 +12,9 @@ gem "middleman-deploy", "~> 2.0.0.pre.alpha"
 gem "slim"
 gem "redcarpet", "~> 3.3", ">= 3.3.3"
 
+# Style
+gem 'middleman-autoprefixer'
+
 # For feed.xml.builder
 gem "builder", "~> 3.0"
 
