@@ -71,6 +71,8 @@ end
 #   end
 # end
 
+ignore "/drafts/*"
+
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
