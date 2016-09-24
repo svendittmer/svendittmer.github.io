@@ -5,20 +5,74 @@
   <id>http://blog.url.com/blog</id>
   <link href="http://blog.url.com/blog"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2016-09-19T22:04:00+02:00</updated>
+  <updated>2016-09-24T08:44:00+02:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Setting up postgres on linux mint debian edition</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2016/09/24/setting-up-postgres/"/>
+    <id>http://blog.url.com/blog/2016/09/24/setting-up-postgres/</id>
+    <published>2016-09-24T08:44:00+02:00</published>
+    <updated>2016-09-24T10:01:57+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;This is a step-by-step guide to getting up and running with postgres on &lt;abbr title="Linux Mint Debian Edition"&gt;LMDE&lt;/abbr&gt;. I'm new to postgres, since I've been working with mysql so far. I want to share with you the problems I encountered getting postgres up and running, hoping that it may help you setup postgres, too.&lt;/p&gt;
+
+&lt;p&gt;Setting up postgres on my local machine wasn't as easy as I expected. I had to get it up and running when I started using heroku, where postgres is the default database. At some point, the tutorial required a working installation of postgres, without explaining how it's done. But even if you don't use heroku, postgres offers some advantages to you, especially when used in a rails app. In case you're interested, check the further reading section after you finished this article.&lt;/p&gt;
+
+&lt;h2 id="installing-postgres"&gt;Installing postgres&lt;/h2&gt;
+
+&lt;p&gt;This is actually simple, it takes two commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~ $ sudo apt-get update
+~ $ sudo apt-get install postgresql postgresql-server-dev-&amp;lt;required-postgres-version, e.g. 9.4&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;postgresql&lt;/em&gt; installs all you need to run the database, while &lt;em&gt;postgresql-server-dev-9.4&lt;/em&gt; is required to install the &lt;em&gt;pg&lt;/em&gt; gem later. You may also use Synaptics to install postgres if you prefer using a GUI.&lt;/p&gt;
+
+&lt;h2 id="getting-access"&gt;Getting access&lt;/h2&gt;
+
+&lt;p&gt;When I tried the &lt;em&gt;psql&lt;/em&gt; command, I got this error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Fatal: role lmde does not exist
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After some research, I learned that a role is what you would call a user in mysql. So psql tried to access the database using my username as role, and that role did not exist. When installing postgres a user account and a role called &lt;em&gt;postgres&lt;/em&gt; were created. So, in order to access the database, I had to login as &lt;em&gt;postgres&lt;/em&gt;, like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~ $ su -
+~ # su - postgres
+~ $ createuser lmde --createdb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;createuser&lt;/em&gt; is a utility command offered by postgres, which creates a role. Don't forget the &lt;em&gt;–createdb&lt;/em&gt; option, or &lt;em&gt;rake db:create&lt;/em&gt; will fail.&lt;/p&gt;
+
+&lt;p&gt;This is all I had to do to continue the heroku tutorial. If this guide doesn't work for you, here are some of the resources that helped me setup postgres:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres"&gt;How To Setup Ruby on Rails with Postgres | DigitalOcean&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.postgresql.org/docs/9.4/static/tutorial-createdb.html"&gt;PostgreSQL: Documentation: 9.4: Creating a Database&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
   <entry>
     <title>Beginner Series</title>
     <link rel="alternate" href="http://blog.url.com/blog/2016/09/19/beginner-series/"/>
     <id>http://blog.url.com/blog/2016/09/19/beginner-series/</id>
     <published>2016-09-19T22:04:00+02:00</published>
-    <updated>2016-09-19T22:17:45+02:00</updated>
+    <updated>2016-09-24T10:12:13+02:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;Today I'm starting a series of beginner tutorials for budding web developers. I expect the reader to have a basic understanding of the topic. My goal is to provide some best practices that go a little beyond "Hello World". The articles will cover Ruby on Rails, HTML, CSS, Bootstrap and some other related stuff. The first article will be about saving records in ActiveRecord, possible gotchas and best practices.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Today I'm starting a series of beginner tutorials for budding web developers. I expect the reader to have a basic understanding of the topic. My goal is to provide some best practices that go a little beyond "Hello World". The articles will cover Ruby on Rails, HTML, CSS, Bootstrap and some other related stuff.&lt;/p&gt;
+
+&lt;h3 id="articles-tagged-beginner-series"&gt;Articles tagged "beginner series"&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="/blog/2016/09/24/setting-up-postgres/"&gt;Setting up postgres on linux mint debian edition&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/blog/2016/09/19/beginner-series/"&gt;Beginner Series&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   <entry>

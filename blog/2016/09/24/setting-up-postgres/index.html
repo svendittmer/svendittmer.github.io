@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1" name="viewport" /><link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" rel="stylesheet" /><title>Sven Dittmer - Setting up postgres on linux mint debian edition</title><link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" /></head><body><div class="container"><div class="row"><header class="page-header"><p class="text-center"><a href="/"><img src="https://www.gravatar.com/avatar/0fc4e73ea3152786d732d50befc68a8d?s=200" width="150" height="150" class="img-circle" alt="Sven Dittmer" /></a></p></header></div><div class="row"><div class="col-xs-12 col-md-9" id="main" role="main"><article><h1>Setting up postgres on linux mint debian edition</h1><p>This is a step-by-step guide to getting up and running with postgres on <abbr title="Linux Mint Debian Edition">LMDE</abbr>. I'm new to postgres, since I've been working with mysql so far. I want to share with you the problems I encountered getting postgres up and running, hoping that it may help you setup postgres, too.</p>
+
+<p>Setting up postgres on my local machine wasn't as easy as I expected. I had to get it up and running when I started using heroku, where postgres is the default database. At some point, the tutorial required a working installation of postgres, without explaining how it's done. But even if you don't use heroku, postgres offers some advantages to you, especially when used in a rails app. In case you're interested, check the further reading section after you finished this article.</p>
+
+<h2 id="installing-postgres">Installing postgres</h2>
+
+<p>This is actually simple, it takes two commands:</p>
+
+<pre><code>~ $ sudo apt-get update
+~ $ sudo apt-get install postgresql postgresql-server-dev-&lt;required-postgres-version, e.g. 9.4&gt;
+</code></pre>
+
+<p><em>postgresql</em> installs all you need to run the database, while <em>postgresql-server-dev-9.4</em> is required to install the <em>pg</em> gem later. You may also use Synaptics to install postgres if you prefer using a GUI.</p>
+
+<h2 id="getting-access">Getting access</h2>
+
+<p>When I tried the <em>psql</em> command, I got this error:</p>
+
+<pre><code>Fatal: role lmde does not exist
+</code></pre>
+
+<p>After some research, I learned that a role is what you would call a user in mysql. So psql tried to access the database using my username as role, and that role did not exist. When installing postgres a user account and a role called <em>postgres</em> were created. So, in order to access the database, I had to login as <em>postgres</em>, like so:</p>
+
+<pre><code>~ $ su -
+~ # su - postgres
+~ $ createuser lmde --createdb
+</code></pre>
+
+<p><em>createuser</em> is a utility command offered by postgres, which creates a role. Don't forget the <em>–createdb</em> option, or <em>rake db:create</em> will fail.</p>
+
+<p>This is all I had to do to continue the heroku tutorial. If this guide doesn't work for you, here are some of the resources that helped me setup postgres:</p>
+
+<ul>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres">How To Setup Ruby on Rails with Postgres | DigitalOcean</a></li>
+  <li><a href="https://www.postgresql.org/docs/9.4/static/tutorial-createdb.html">PostgreSQL: Documentation: 9.4: Creating a Database</a></li>
+</ul>
+</article></div><aside class="col-xs-12 col-md-3"><h2>Recent Articles</h2><ol><li><a href="/blog/2016/09/24/setting-up-postgres/">Setting up postgres on linux mint debian edition</a> <span>Sep 24</span></li><li><a href="/blog/2016/09/19/beginner-series/">Beginner Series</a> <span>Sep 19</span></li><li><a href="/blog/2016/06/13/new-design/">New Design</a> <span>Jun 13</span></li><li><a href="/blog/2016/06/12/deploying-to-github-pages/">Deploying Middleman to Github Pages</a> <span>Jun 12</span></li><li><a href="/blog/2016/06/12/first-blog-entry/">First Blog Entry</a> <span>Jun 12</span></li></ol><h2>Tags</h2><ol><li><a href="/blog/tags/beginner-series/">beginner series (2)</a></li><li><a href="/blog/tags/postgres/">postgres (1)</a></li><li><a href="/blog/tags/middleman/">middleman (2)</a></li><li><a href="/blog/tags/blog/">blog (1)</a></li><li><a href="/blog/tags/deploy/">deploy (1)</a></li><li><a href="/blog/tags/github/">github (1)</a></li></ol><h2>By Year</h2><ol><li><a href="/blog/2016/">2016 (5)</a></li></ol></aside></div></div></body></html>
