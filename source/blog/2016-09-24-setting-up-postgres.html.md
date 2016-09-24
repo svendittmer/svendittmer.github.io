@@ -6,7 +6,7 @@ tags:
   - postgres
 ---
 
-This is a step-by-step guide to getting up and running with postgres on <abbr title="Linux Mint Debian Edition">LMDE</abbr>. I'm new to postgres, since I've been working with mysql so far. I want to share with you the problems I encountered getting postgres up and running, hoping that it may help you setup postgres, too.
+This is a step-by-step guide to getting up and running with postgres on <abbr title="Linux Mint Debian Edition">LMDE</abbr>. I'm new to postgres, since I've only been working with mysql so far. I want to share with you the problems and solutions I encountered getting postgres up and running, hoping that it may help you setup postgres, too.
 
 Setting up postgres on my local machine wasn't as easy as I expected. I had to get it up and running when I started using heroku, where postgres is the default database. At some point, the tutorial required a working installation of postgres, without explaining how it's done. But even if you don't use heroku, postgres offers some advantages to you, especially when used in a rails app. In case you're interested, check the further reading section after you finished this article.
 
