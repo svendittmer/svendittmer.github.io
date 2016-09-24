@@ -14,11 +14,11 @@
     <link rel="alternate" href="http://blog.url.com/blog/2016/09/24/setting-up-postgres/"/>
     <id>http://blog.url.com/blog/2016/09/24/setting-up-postgres/</id>
     <published>2016-09-24T08:44:00+02:00</published>
-    <updated>2016-09-24T10:01:57+02:00</updated>
+    <updated>2016-09-24T10:15:49+02:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;This is a step-by-step guide to getting up and running with postgres on &lt;abbr title="Linux Mint Debian Edition"&gt;LMDE&lt;/abbr&gt;. I'm new to postgres, since I've been working with mysql so far. I want to share with you the problems I encountered getting postgres up and running, hoping that it may help you setup postgres, too.&lt;/p&gt;
+    <content type="html">&lt;p&gt;This is a step-by-step guide to getting up and running with postgres on &lt;abbr title="Linux Mint Debian Edition"&gt;LMDE&lt;/abbr&gt;. I'm new to postgres, since I've only been working with mysql so far. I want to share with you the problems and solutions I encountered getting postgres up and running, hoping that it may help you setup postgres, too.&lt;/p&gt;
 
 &lt;p&gt;Setting up postgres on my local machine wasn't as easy as I expected. I had to get it up and running when I started using heroku, where postgres is the default database. At some point, the tutorial required a working installation of postgres, without explaining how it's done. But even if you don't use heroku, postgres offers some advantages to you, especially when used in a rails app. In case you're interested, check the further reading section after you finished this article.&lt;/p&gt;
 
