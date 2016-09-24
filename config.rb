@@ -58,7 +58,7 @@ activate :deploy do |deploy|
 end
 
 
-page "/feed.xml", layout: false
+page "/blog/feed.xml", layout: false
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
